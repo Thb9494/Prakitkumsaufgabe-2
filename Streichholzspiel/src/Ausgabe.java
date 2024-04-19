@@ -1,3 +1,4 @@
+package Streichholzspiel.src;
 public class Ausgabe {
 
   public static void zahlEingeben () {

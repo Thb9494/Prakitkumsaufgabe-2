@@ -1,3 +1,4 @@
+package Streichholzspiel.src;
 public class Spiel {
   private int anzahlHoelzerZuBeginn;
   private int anzahlHoelzerImSpiel;
