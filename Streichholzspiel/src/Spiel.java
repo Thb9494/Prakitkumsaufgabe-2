@@ -17,10 +17,10 @@ public class Spiel {
   //   this.anzahlHoelzerZuBeginn = anzahlHoelzerZuBeginn;
   // }
 
-  // //getter für anzahlHoelzerImSpiel
-  // public int getAnzahlHoelzerImSpiel() {
-  //   return anzahlHoelzerImSpiel;
-  // }
+  //getter für anzahlHoelzerImSpiel
+  public int getAnzahlHoelzerImSpiel() {
+    return anzahlHoelzerImSpiel;
+  }
 public void computerZiehen () {}
 
 public void menschZiehen () {}
