@@ -6,6 +6,7 @@ public class Spiel {
   // Konstruktor
   public Spiel(int anzahlHoelzerZuBeginn) {
     this.anzahlHoelzerZuBeginn = anzahlHoelzerZuBeginn;
+    this.anzahlHoelzerImSpiel = anzahlHoelzerZuBeginn;
     while (anzahlHoelzerImSpiel > 0) {
       computerZiehen();
       //menschgewinnt, falls computer das letzte Holz gezogen hat

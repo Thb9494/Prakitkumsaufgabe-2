@@ -3,7 +3,7 @@ public class Ausgabe {
 private int eingabe;
 
   public static void zahlEingeben () {
-    System.out.println("Bitte geben Sie eine Zahl ein: ");
+    System.out.println("Bitte geben Sie eine Anzahl zwischen 1 und 3 der Streichhölzer, die sie ziehen möchten ein: ");
    
 
   }

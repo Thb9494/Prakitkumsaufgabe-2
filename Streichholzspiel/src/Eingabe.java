@@ -9,26 +9,23 @@ import java.io.InputStreamReader;
 public class Eingabe {
 
   public static int leseZahl() {
-    boolean isNumber = false;
-    int number = 0;
-
-    while (!isNumber) {
+    
       try {
         Ausgabe.zahlEingeben();
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String input = reader.readLine();
-        number = Integer.parseInt(input);
-        isNumber = true;
+        return Integer.parseInt(input);
+        
       } catch (IOException e) {
-        Ausgabe.keineZahl();
         e.printStackTrace();
+        return leseZahl();
       } catch (NumberFormatException e) {
         Ausgabe.keineZahl();
+        return leseZahl();
       }
     }
+    
 
-    return number; 
-} 
   //Methode für leseHoelzer
   public static int leseHoelzer() {
     int hoelzer = leseZahl();
