@@ -1,11 +1,9 @@
 package Streichholzspiel.src;
 public class Spiel {
-  private int anzahlHoelzerZuBeginn;
   private int anzahlHoelzerImSpiel;
 
   // Konstruktor
   public Spiel(int anzahlHoelzerZuBeginn) {
-    this.anzahlHoelzerZuBeginn = anzahlHoelzerZuBeginn;
     this.anzahlHoelzerImSpiel = anzahlHoelzerZuBeginn;
     while (anzahlHoelzerImSpiel > 0) {
       computerZiehen();
@@ -25,24 +23,20 @@ public class Spiel {
 
 
 public void computerZiehen () {
-  berechneComputerZug();
-  anzahlHoelzerImSpiel = anzahlHoelzerImSpiel - berechneComputerZug();
-  if (anzahlHoelzerImSpiel < 0) {
-    anzahlHoelzerImSpiel = anzahlHoelzerImSpiel + berechneComputerZug();
-    computerZiehen();
-  }
-  Ausgabe.computerZug(berechneComputerZug(), anzahlHoelzerImSpiel);
+  int gezogen = berechneComputerZug();
+  anzahlHoelzerImSpiel = anzahlHoelzerImSpiel - gezogen;
+  Ausgabe.computerZug(gezogen, anzahlHoelzerImSpiel);
 }
 
 public void menschZiehen () {
-  Eingabe.leseHoelzer();
-  anzahlHoelzerImSpiel = anzahlHoelzerImSpiel - Eingabe.leseHoelzer();
+  int input = Eingabe.leseHoelzer();
+  anzahlHoelzerImSpiel = anzahlHoelzerImSpiel - input;
   if (anzahlHoelzerImSpiel < 0) {
     Ausgabe.zugNichtMoeglich();
-    anzahlHoelzerImSpiel = anzahlHoelzerImSpiel + Eingabe.leseHoelzer();
+    anzahlHoelzerImSpiel = anzahlHoelzerImSpiel + input;
     menschZiehen();
   }
-  Ausgabe.menschZug(Eingabe.leseHoelzer(), anzahlHoelzerImSpiel);
+  Ausgabe.menschZug(input, anzahlHoelzerImSpiel);
 }
 
 private int berechneComputerZug () {
@@ -53,7 +47,7 @@ private int berechneComputerZug () {
   } else if (anzahlHoelzerImSpiel % 4 == 2) {
     return 1;
   } else {
-  return 2;
+  return 1;
 }
 }
 }
