@@ -47,7 +47,6 @@ private int berechneComputerZug () {
   } else if (anzahlHoelzerImSpiel % 4 == 2) {
     return 1;
   } else {
-    //return 1;
     if (anzahlHoelzerImSpiel == 1) {
       return 1;
     } else {
